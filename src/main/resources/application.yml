@@ -1,12 +1,24 @@
-display:
-  mach: 3
-  unit:
-    name: "mph"
-    factor: 2.23694
 quarkus:
-  log:
-    console:
-      json:
-        pretty-print: true
-        date-format: "YYYY-MM-dd HH:mm:ss"
-        exception-output-type: "detailed-and-formatted"
+  http:
+    port: 8000
+  mongodb:
+    connection-string: mongodb://localhost:27017
+    database: animaldb
+
+kafka:
+  bootstrap:
+    servers: localhost:9092
+mp:
+  messaging:
+    incoming:
+      animals:
+        connector: smallrye-kafka
+        bootstrap:
+          servers: localhost:9092
+        value:
+          deserializer: edu.devto.java.quarkusreactive.adapter.serdes.EventDeserializer
+        key:
+          deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        topic: animals
+        group:
+          id: quarkus-reactive-kafka
