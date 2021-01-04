@@ -4,7 +4,6 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-import org.apache.kafka.common.header.Headers;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 @ToString

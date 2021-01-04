@@ -1,8 +1,6 @@
 package edu.devto.java.quarkusreactive.adapter.pojo;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import edu.devto.java.quarkusreactive.adapter.pojo.enumerator.EventType;
 import edu.devto.java.quarkusreactive.adapter.pojo.source.AnimalCreateEventSource;
@@ -11,8 +9,6 @@ import edu.devto.java.quarkusreactive.adapter.pojo.source.EventSource;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
-
-import static com.fasterxml.jackson.annotation.JsonTypeInfo.As.*;
 
 @ToString
 @Getter

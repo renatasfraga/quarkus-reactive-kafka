@@ -6,7 +6,6 @@ import org.apache.kafka.common.header.Headers;
 import org.apache.kafka.common.serialization.Deserializer;
 import org.jboss.logging.Logger;
 
-
 import static java.lang.String.format;
 
 public class EventDeserializer implements Deserializer<Event> {
