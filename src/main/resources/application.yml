@@ -1,0 +1,21 @@
+quarkus:
+  http:
+    port: 8000
+
+kafka:
+  bootstrap:
+    servers: localhost:9092
+mp:
+  messaging:
+    incoming:
+      animals:
+        connector: smallrye-kafka
+        bootstrap:
+          servers: localhost:9092
+        value:
+          deserializer: edu.devto.java.quarkusreactive.adapter.serdes.EventDeserializer
+        key:
+          deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        topic: animals
+        group:
+          id: quarkus-reactive-kafka
